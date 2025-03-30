@@ -18,9 +18,9 @@ const TimerApp = () => {
   const [isSubTimerSet, setIsSubTimerSet] = useState(false);
 
   // Store the Howl instances in refs
-  const sound10Seconds = useRef(new Howl({ src: ['/images/lastseconds.mp3'] })).current;
-  const sound5Minutes = useRef(new Howl({ src: ['/images/secondshotclock.mp3'] })).current;
-  const soundSub = useRef(new Howl({ src: ['/images/timersoundeffect.mp3'] })).current;
+  const sound10Seconds = useRef(new Howl({ src: ['images/lastseconds.mp3'] })).current;
+  const sound5Minutes = useRef(new Howl({ src: ['images/secondshotclock.mp3'] })).current;
+  const soundSub = useRef(new Howl({ src: ['images/timersoundeffect.mp3'] })).current;
 
   useEffect(() => {
     let mainInterval;

@@ -97,7 +97,7 @@ const TimerApp = () => {
   };
 
   return (
-    <div className="container" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '100vh', backgroundImage: "url(../images/snookerbackg.jpg)", backgroundSize: 'cover', backgroundColor: 'rgba(245, 245, 245, 0.5)', backgroundBlendMode: 'overlay', textAlign: 'center' }}>
+    <div className="container" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '100vh', backgroundImage: "url(./images/snookerbackg.jpg)", backgroundSize: 'cover', backgroundColor: 'rgba(245, 245, 245, 0.5)', backgroundBlendMode: 'overlay', textAlign: 'center' }}>
       <div className="overlay">
         {/* Main Timer */}
         <h1 className="timer-text">{formatTime(mainTimer)}</h1>

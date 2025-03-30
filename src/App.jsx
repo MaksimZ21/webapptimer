@@ -3,7 +3,7 @@ import './App.css';
 import { Howl } from 'howler';
 
 const TimerApp = () => {
-  const [mainTimer, setMainTimer] = useState(320); // 600 seconds = 10 minutes
+  const [mainTimer, setMainTimer] = useState(600); // 600 seconds = 10 minutes
   const [isMainRunning, setIsMainRunning] = useState(false);
   const [subTimer, setSubTimer] = useState(15);
   const [isSubRunning, setIsSubRunning] = useState(false);
@@ -21,7 +21,7 @@ const TimerApp = () => {
   const sound10Seconds = useRef(new Howl({ src: ['./images/lastseconds.mp3'] })).current;
   const sound5Minutes = useRef(new Howl({ src: ['./images/secondshotclock.mp3'] })).current;
   const soundSub = useRef(new Howl({ src: ['./images/timersoundeffect.mp3'] })).current;
-
+  const buzzerSound = useRef(new Howl({src: ['./images/buzzer.mp3']})).current;
   useEffect(() => {
     let mainInterval;
     if (isMainRunning) {
@@ -65,6 +65,10 @@ const TimerApp = () => {
     // Play sound when the main timer reaches 5 minutes (300 seconds)
     if (mainTimer === 300 && !sound5Minutes.playing()) {
       sound5Minutes.play();
+    }
+
+    if(mainTimer === 0 && !sound10Seconds.playing()){
+      buzzerSound.play();
     }
   }, [mainTimer, subTimer, isSubRunning]);
 
